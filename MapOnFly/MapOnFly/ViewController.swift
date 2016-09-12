@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import MapKit
 
 class ViewController: UIViewController {
 	
-	@IBOutlet weak var textField: UITextField!	
+	@IBOutlet weak var textField: UITextField!
 	@IBOutlet weak var mapField: MKMapView!
 	
 
