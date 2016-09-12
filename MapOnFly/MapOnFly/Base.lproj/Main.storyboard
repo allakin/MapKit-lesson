@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MapOnFly" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,36 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите что-нибудь" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NOG-A0-bXU">
+                                <rect key="frame" x="20" y="46" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="YAQ-0T-6pO">
+                                <rect key="frame" x="0.0" y="103" width="600" height="497"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YAQ-0T-6pO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="8sS-TW-7eQ"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="NOG-A0-bXU" secondAttribute="leading" id="Chb-fD-cux"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YAQ-0T-6pO" secondAttribute="trailing" constant="-20" id="MMn-pA-7wQ"/>
+                            <constraint firstItem="NOG-A0-bXU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="26" id="QZs-pb-LDn"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="YAQ-0T-6pO" secondAttribute="bottom" id="Uk9-Pw-XJ6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NOG-A0-bXU" secondAttribute="trailing" id="d0d-Bp-NSa"/>
+                            <constraint firstItem="NOG-A0-bXU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e36-lu-9cN"/>
+                            <constraint firstItem="YAQ-0T-6pO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="83" id="gzf-cr-qrA"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapField" destination="YAQ-0T-6pO" id="Ur9-vp-WAx"/>
+                        <outlet property="textField" destination="NOG-A0-bXU" id="nmP-TK-36V"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="243" y="338"/>
         </scene>
     </scenes>
 </document>

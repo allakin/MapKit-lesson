@@ -9,6 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
+	
+	@IBOutlet weak var textField: UITextField!	
+	@IBOutlet weak var mapField: MKMapView!
+	
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
